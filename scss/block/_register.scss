@@ -1,0 +1,64 @@
+body{
+    background: $mitalic;
+}
+.forms{
+    min-height: 60vh;
+    @include center;
+}
+.register{
+    width: 50%;
+}
+.error{
+    color: red;
+    text-align: center;
+    padding-top: 3rem;
+    transition: 0.5s ease;
+    display: none;
+}
+.block{
+    display: flex;
+    justify-content: center;
+}
+.register__register_title{
+    padding-top: 4rem;
+    text-align: center;
+}
+.register__register_title h1{
+    font-size: 40px;
+}
+.register__register_title p{
+    font-size: 20px;
+}
+.register__form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.register__form input{
+    margin: 0.5rem;
+    padding: 0.5rem 2rem;
+    width: 50%;
+    transition:all 0.4s ease;
+    font-size: 18px;
+    border-radius: 5px; 
+    @include transparent;
+}
+.register__form input:focus{
+    @include transparentHover
+}
+.register__form button{
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: $mitalic;
+    transition: all 0.5s ease;
+}
+.register__form button:hover{
+    background: grey;
+    color: #fff;
+}
+.register__form button:active{
+    color: $qora;
+}

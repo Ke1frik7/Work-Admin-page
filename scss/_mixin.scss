@@ -1,0 +1,41 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+@mixin between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+@mixin evenly{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+@mixin around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+@mixin transparent{
+    border: 1px solid transparent;
+    outline: 4px solid transparent;
+}
+@mixin transparentHover{
+    border: 1px solid transparent;
+    outline: 4px solid rgba(0, 255, 255, 0.413);
+}
+@mixin anker{
+    text-decoration: none;
+    color: $qora;
+}
+@mixin end{
+    display: flex;
+    justify-content: flex-end;
+    text-align: end;
+}

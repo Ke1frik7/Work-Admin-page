@@ -1,0 +1,50 @@
+.nav{
+    width: 100%;
+    display: flex;
+    @include around;
+}
+.nav_logo{
+    font-size: 40px;
+    font-weight: 600;
+    @include anker;
+}
+.nav_ul{
+    width: 40%;
+    @include evenly;
+    list-style-type: none;
+}
+ .nav__list_nav_link{
+    font-size: 20px;
+    @include anker;
+}
+.nav__ul_list{
+    padding-top: 1.5rem;
+}
+.nav__ul_list::after{
+    content: "";
+    width: 1%;
+    height: 3px ;
+    background: black;
+    display: inline-block;
+    opacity: 0;
+    transition:all 0.5s ease;
+}
+.nav__ul_list:hover::after{
+    width: 100%;
+    opacity: 1;
+}
+.hero{
+    padding-top: 15rem;
+}
+.hero_title{
+    font-size: 35px;
+    @include center;
+}
+.hero_links{
+    padding-top: 1.5rem;
+    @include evenly
+}
+.hero_links a{
+    font-size: 20px;
+    @include anker
+}

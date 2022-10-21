@@ -1,0 +1,40 @@
+.admin{
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+}
+.admin__cards{
+    padding-top:5rem ; 
+    @include evenly;
+    flex-wrap: wrap;
+}
+.admin__cards .card{
+    width: 30%; 
+    margin: 0.5rem;
+    padding: 1rem 0.5rem;
+    background: rgba(0, 0, 0, 0.303);
+}
+.card-text h2{
+    font-size: 30px;
+    margin: 0.5rem;
+}
+.card-text h4{
+    font-size: 20px;
+    margin: 0.5rem;
+}
+.card button{
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: $blacks;
+    transition: all 0.5s ease;
+    color: #fff;
+}
+.card button:hover{
+    background: grey;
+    color: #fff;
+}
+.card button:active{
+    color: $qora;
+}
