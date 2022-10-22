@@ -1,7 +1,12 @@
 window.addEventListener("load",() => {
+    let burger = renderElement(".burger")
+    let navUl = renderElement(".nav_ul")
     let admin = renderElement("#admins")
     let menejer = renderElement("#menejers")
     let direktor = renderElement("#direktors")
+    burger.addEventListener("click", () => {
+        navUl.classList.toggle("active")
+    })
     admin.addEventListener("click", () => {
         window.location.replace("admin.html")
     })
@@ -32,8 +37,7 @@ window.addEventListener("load",() => {
         .then((response) => {
             let array = response.data.data
             console.log(array)
-            let [admin1, admin2, admin3, ... menejs]= array
-                     
+            let [admin1, admin2, admin3, ... menejs]= array                     
         })
     }
     renderUsers("Shox")

@@ -1,23 +1,29 @@
-.admin{
+.admin, .menejer, .direktor{
     width: 100%;
     text-align: center;
     padding-top: 2rem;
 }
-.admin__cards{
+.admin__cards, .menejers__cards, .direktor__title{
     padding-top:5rem ; 
-    @include evenly;
-    flex-wrap: wrap;
+    // @include evenly;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.admin__cards .card{
-    width: 30%; 
-    margin: 0.5rem;
+.direktor__cards{
+    @include center
+}
+.admin__cards .card, .menejers__cards .card, .direktor__cards .card{
+    width: 50%; 
     padding: 1rem 0.5rem;
     background: rgba(0, 0, 0, 0.303);
+    border-radius: 30px ;
+    margin: 0 auto;
 }
 .card-text h2{
     font-size: 30px;
     margin: 0.5rem;
-}
+}   
 .card-text h4{
     font-size: 20px;
     margin: 0.5rem;
@@ -37,4 +43,40 @@
 }
 .card button:active{
     color: $qora;
+}
+.card_locals{
+    width: 50%;
+    height: auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.869);
+    height: 10px;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    transform: translateX(-50%, -50%);
+    display: none;
+}
+.card_locals_block{
+    display: block;
+    height: auto;
+    padding: 1rem;
+    border-radius: 50px;
+    position: fixed;
+}
+.card_locals_block img{
+    border-radius: 50%;
+}
+.card_locals_block h3 ,h4{
+    font-size: 25px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 20px white;
+}
+.card_locals_block p{
+    width: 50%;
+    margin: 0 auto;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 20px white;
+    font-size: 17px;
 }

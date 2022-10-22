@@ -39,3 +39,16 @@
     justify-content: flex-end;
     text-align: end;
 }
+@mixin grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+@mixin gridMedia{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@mixin media($max){
+    @media only screen and (max-width: $max) {
+        @content
+    }
+}

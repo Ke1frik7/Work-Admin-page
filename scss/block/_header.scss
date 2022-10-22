@@ -3,6 +3,9 @@
     display: flex;
     @include around;
 }
+.burger{
+    display: none;
+}
 .nav_logo{
     font-size: 40px;
     font-weight: 600;

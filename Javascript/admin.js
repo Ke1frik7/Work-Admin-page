@@ -1,7 +1,3 @@
-// import { card } from "./card"
-// let cardsElement = card()
-// console.log(cardsElement)
-
 function renderUsers(){
     let object = []
     axios({
@@ -35,11 +31,13 @@ function renders(data){
 }
 let object = {
     name: null,   
-
+    image: null,
+    admin: "admin"
 }
 window.addEventListener("click", (e) => {
     if(e.target.matches(".card-btn")){
         console.log(true)
+        cardLocals.classList.toggle("card_locals_block")
         let btnId = e.target.dataset.id
         axios({
             method: "GET", 
@@ -50,12 +48,37 @@ window.addEventListener("click", (e) => {
             data.map((item) => {
                 if(btnId == item.id){
                     object.name = `${item.first_name} ${item.last_name}`                    
-                    console.log(object)
-
+                    object.image = `${item.avatar}`                    
+                    window.localStorage.setItem("object_locals_work", JSON.stringify(object))
+                    let parses = JSON.parse(window.localStorage.getItem("object_locals_work"))
+                    renderLocalsDiv(parses)
                 }
-            })            
-        })
+            }    
+            )            
+        }
+        )
     }else{
         console.log(false)
     }
 })
+let cardLocals = renderElement(".card_locals")
+let cardLocalsArray = []
+function renderLocalsDiv(obj){
+    cardLocalsArray = [...cardLocalsArray, obj]
+    for(let i = 0; i<cardLocalsArray.length; i++){
+        let img = createTag("img")
+        img.src = cardLocalsArray[i].image
+        console.log(img)
+        let h3 = createTag("h3")
+        h3.appendChild(textNode(cardLocalsArray[i].name))
+        let h4  =createTag("h4")
+        h4.appendChild(textNode(cardLocalsArray[i].admin))
+        let p = createTag("p")
+        p.appendChild(textNode(cardLocalsArray[i].name + " " +"Bizning adminimiz va bu kishi qo'ng'iroqqa har doim vaqtida javob beradi "))
+        cardLocals.innerHTML = null
+        cardLocals.appendChild(img)
+        cardLocals.appendChild(h3)
+        cardLocals.appendChild(h4)
+        cardLocals.appendChild(p)
+    }
+}
